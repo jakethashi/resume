@@ -1,0 +1,238 @@
+<!DOCTYPE>
+<html ng-app="mscv">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scrolable=no, width=device-width, initial-scale=1">
+    <title>Hi, my name is Martin Surynek</title>
+    <link rel="shortcut icon" type="image/ico" href="app/img/favicon.ico" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,800,400' rel='stylesheet' type='text/css'>
+    
+    <!-- build:css files/css/styles.css -->
+    <link rel="stylesheet" href="app/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="app/css/animate.css">
+    <!-- main styles -->
+    <link rel="stylesheet" href="app/css/ms.styles.css">
+    <!-- /build -->
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+<body    
+    id="top"
+    ng-controller="MscvLearnMoreCtrl as mscvLearnCtrl"
+    data-target=".navbar-default"
+    scroll-spy="scroll">
+
+    <header class="header">
+        <a href="/">
+            <div class="logo"></div>
+        </a>
+        <h1 class="title">Martin Surynek</h1>
+        <div class="container">
+            <div class="row">
+                <span class="col-xs-12 small-title">UI / UX Web Developer</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- main navigation -->
+    <div class="nav-wrapper nav-force-wrapper" ng-cloak>
+        <div class="container">
+            <div class="row">
+                <nav id="main-navigation" class="col-xs-2 col-xs-offset-5 navbar navbar-default">
+                    <div class="container-fluid2">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div ng-controller="MainNavCtrl as nav" id="main-navigation-target">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/">Back</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- main content -->
+    <div id="main-content" class="container">
+        <div class="row">
+            <!-- introduction -->
+            <div class="col-xs-12 wow fadeInLeft">
+                <h3 class="introduction">Learn more</h3>
+                <div>
+                    <p>
+                        So, you are interested to find out what's hiding behind the web site, which kind of technologies were used to build up these pages, what processes and procedures were used to manage and maintain the solution and much more? So let's dive in under the hood and have a fun to discover those secrets.<br/>
+                        First of all you mustn't realize that  procedure which were used here in the project cannot fit as a generic solution for another project, you may be inspire by it but every project is unique and have a differences which could be against my solution.
+                    </p>
+                </div>
+            </div>
+
+            <!-- architecture -->
+            <div class="col-xs-12">
+                <h3 class="architecture wow fadeIn">Architecture</h3>
+                <div>
+                    <p class="wow fadeIn">
+                        At first for the seek of simplicity were used VMMV javascript framework <b>Knockout</b> to have simple VM control and basic data binding. But over time it turns out that such as simple library isn't as progressive as chosen framework which is <b>Angular</b>. Thanks of many desired features and excellent modularity it won my private competition.
+                    </p>
+
+                    <p>
+                        <section class="wow fadeInRight">
+                            <h4><b>So first things first</b></h4>
+                            Because there isn't any need to have a dynamic data consumed from beck-end site I have decided to have a simple javascript object literal as a data source loaded asynchronously. 
+                            Once there is solution for back-end let's start with the front-end solution which is a little bit progressive. I will make a short list of all front-end technologies and processes to have overview about the solution, but some not so interesting techniques will be omitted.
+                        </section>
+
+                        <ul>
+                            <li class="wow fadeInLeft">
+                                <section>
+                                    <h4><b>Design</b></h4>
+                                    <p>
+                                        At first I've created several wireframes and layouts and as a result I used those  materials as a inspiration for static layout created in graphics application.
+                                    </p>
+                                </section>
+                            </li>
+
+                            <li class="wow fadeInRight">
+                                <section>
+                                    <h4><b>Project Bootstrap</b></h4>
+                                    <p>
+                                        In order to setup the project a several tools were used to have initial process as simple as possible. 
+                                        Here is the short example of used tools:
+                                        <ul>
+                                            <li><b>Bower</b> packaging tools to boilerplate or initial setup of vendor libraries e.g. jQuery, angular, twiter bootstrap.</li>
+                                            <li><b>Grunt</b> tasker tools to be able to clen, concat, deploy, uglify and execute those steps to managing project. Additional packages for Gurunt where were useful:
+                                                <ul>
+                                                    <li>grunt-processhtml</li>
+                                                    <li>grunt-contrib-uglify</li>
+                                                    <li>grunt-contrib-clean</li>
+                                                    <li>grunt-contrib-concat</li>
+                                                    <li>grunt-contrib-copy</li>
+                                                    <li>and much more</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </section>
+                            </li>
+
+                            <li class="wow fadeInLeft">
+                                <h4><b>CSS styling</b></h4>
+                                <p>
+                                    Preprocessor <b>sass</b> together with <b>compass</b> where useful to boost performance and efficiency of page styling. I have also take advantage of source map in order to integrate with chrome developer tools to have ability watch live changes of .sass files and transform it to css files on the fly.
+                                </p>
+                            </li>
+                            <li class="wow fadeInRight">
+                                <h4><b></b></h4>
+                                <p>
+                                    <b>Angular</b> as a core framework has advantage to use all common techniques a processes like controllers, directives, services to 
+                                    have excellent logic and file organization over a project. 
+                                    Integration with extensions:
+                                    <ul>
+                                        <li>angular-bootstrap</li>
+                                        <li>angular-resource</li>
+                                    </ul>
+                                </p>
+                            </li>
+
+                            <li class="wow fadeInLeft">
+                                <h4><b>Build process</b></h4>
+                                <p>
+                                    Finally here is describe a little bit more about final process of deployment to production environment.
+                                    Also a few future improvement steps which are considered to be important to a project.<br/><br/>
+
+                                    Development to production envirinment consist of several steps before a folder package can be transported to the server. 
+                                    I'll descripe some of them:
+                                    <ul>
+                                        <li>clean up old package to be certain all previous files are wiped out</li>
+                                        <li>upload all necessary files e.g. images, fonts etc. to final package</li>
+                                        <li>merge css,js into one single file in order to minimize server requests</li>
+                                        <li>alter html files to respect server restriction</li>
+                                        <li>decrease main javascript and css file size by minifying process</li>
+                                    </ul>
+
+                                </p>
+
+                                <p>
+                                    After those steps are the folder package ready to go to production environment.<br/><br/>
+                                    A one word about improvement process. I am going to analyze and identify the solution to expose critical path of resources and alter solution to be able to have page load under 1000 ms for best UX on mobile devices. 
+                                    Also page preload and asynchronous content consuming will be implement.
+                                </p>
+                            </li>
+                            <li class="wow fadeInRight">
+                                <h4><b>Final words</b></h4>
+                                <p>
+                                    The overall process may seems to be complicated but thanks the process of automations is any even small changes of project easy to be reflected to production environment.
+                                    And even more there is almost eliminated possibility of error or forgotten step in development process.
+                                </p> 
+                            </li>
+                        </ul>
+
+                    </p>
+
+                    <p>
+                        <a href="/">Back to home page</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    <footer id="footer" ng-cloak>
+        <div id="copyright">©2015 Martin Surynek. All Rights Reserved.</div>
+    </footer>
+
+    <!-- build:js files/js/vendor.min.js -->
+    <!-- vendor scripts -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-easing/jquery.easing.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app/scripts/vendor/wow/dist/wow.js"></script>
+
+    <!-- angular -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- /build -->
+
+    <!-- build:js files/js/main.min.js -->
+    <!-- my scripts -->
+    <script src="app/scripts/main.js"></script>
+    <script src="app/scripts/config.js"></script>
+    <script src="app/scripts/controllers.js"></script>
+    <script src="app/scripts/services.js"></script>
+    <script src="app/scripts/directives.js"></script>
+    <script src="app/scripts/filters.js"></script>
+    <!-- /build -->
+    <!-- ga -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64354534-1', 'auto');
+      ga('send', 'pageview');
+    </script>    
+</body>
+</html>
+
+
