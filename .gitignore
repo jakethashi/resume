@@ -1,11 +1,11 @@
 # ignore grunt structure
-.node_modules
+node_modules
 
 # ignore sass
 .sass-cache
 *.css.map
 
 # ignore custom structure
-.build
-.bower_components
+build
+bower_components
 .module-cache
