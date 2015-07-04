@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h3 class="modal-title">Unexpected error has occurred</h3>
+</div>
+<div class="modal-body">
+
+  <ul>
+    <li>missing data</li>
+    <li>server is overloaded</li>
+  </ul>
+
+  <div class="lead">Error detail:</div>
+
+  <p class="alert alert-warning">
+    {{ modal.errorDetail }}
+  </p>
+
+</div>
+<div class="modal-footer">
+  <button class="btn btn-warning" ng-click="modal.cancel()">Zrušit</button>
+</div>

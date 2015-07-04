@@ -1,0 +1,128 @@
+@media only screen and (min-width: 768px) {
+
+    /* HEADER */
+    .header {
+        min-height: 325px;
+    }
+    
+	#github {
+		display: block;
+	}
+
+    .header.minimal {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        
+        .logo {
+            top: 125px;
+            margin-left: -350px;
+            @include transition-property(all);
+			@include transition-duration(.3s);
+  			@include transition-timing-function(ease-in-out);
+        }
+
+        .title {
+            position: fixed;
+            top: 30px;
+            text-align: center;
+            width: 100%;
+
+            & + .container {
+                position: fixed;
+                top: 110px;
+                width: 100%;
+            }
+        }
+
+        & + .empty-header {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    /* MAIN NAVIGATION */
+    .nav-wrapper {
+        margin-top: -25px;
+        //width: 100%;
+        background: transparent;
+
+        &.minimal {
+            margin-top: 155px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+        }
+
+        #main-navigation {
+            padding-left: 0;
+            padding-right: 0;
+
+            .small-logo {
+                display: none;
+            }
+
+            .navbar-brand {
+                display: none;
+            }
+
+            #main-navigation-target {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .navbar-nav {
+                display: table;
+                table-layout: fixed;
+			    width: 100%;
+
+                
+                &:before, &:after {
+                    display: none;
+                }
+
+                > li {
+                    display: table-cell;
+                    float: none;
+                    text-align: center;
+				    border-right: 1px solid white;                    
+
+                    //> a	{
+                        &:hover {
+                            //color: black;
+                            @include background-image(
+                                linear-gradient(
+                                    160deg, 
+                                    $color-light-blue 0%,
+                                    $color-dark-blue 100%
+                                )
+                            );
+                        }
+				    //}	
+                } 
+            }
+        }
+    }
+
+    /* MAIN */
+    #main-content {
+
+        #skills {
+            .buttons-wrapper {
+                .buttons{
+                    //max-width: none;
+                }
+            }
+            
+
+            .item {
+                background: transparent !important;
+                &:nth-child(4n), &:nth-child(4n + 3) {
+                    background: $color-extralight-gray !important;
+                }
+            }
+            
+        }
+    }
+
+}

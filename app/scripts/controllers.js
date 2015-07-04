@@ -51,6 +51,7 @@ angular
     {
         var vm = this;
 
+        // TODO: populate filters from external service
         vm.skillFilter = [{
             title: 'All',
             type: ''
@@ -85,8 +86,6 @@ angular
             $.extend(vm, reponse.data);
             
             $('.logo').css({  opacity: 1 });
-            
-            //$('.logo').removeClass('loading');            
             new WOW().init();
         }
 
@@ -106,9 +105,6 @@ angular
                 vm.skillItemsLimit = 10;
             }
         };
-
-
-        //$.extend(vm, content);
     }])
     .controller('ModalController', [
         '$modalInstance',
@@ -122,7 +118,7 @@ angular
             $modalInstance.dismiss('cancel');
         };
 
-        vm.errorDetail = 'nejaka chyba';
+        vm.errorDetail = 'an error occurred';
     }])
     .controller('MainNavCtrl', function() {
         this.navItemClick = function($event) {
