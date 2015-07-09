@@ -114,6 +114,8 @@ module.exports = function(grunt) {
 					'bower_components/angular-resource/angular-resource.js',
 					'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
 					'<%= config.src %>/scripts/vendor/wow/dist/wow.js',
+					'<%= config.src %>/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js',
+					
 				],
 				dest: '<%= config.dest %>/files/js/vendor.min.js',
 
@@ -187,7 +189,8 @@ module.exports = function(grunt) {
 					WOW: false,
 					module: true,
 					define: true,
-					require: true
+					require: true,
+					google: false
 				}
 			}
 		},

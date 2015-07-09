@@ -15,8 +15,8 @@
                "tags": {
                   "address": {
                      "gps": {
-                        "long": 44,
-                        "lat": 44
+                        "long": 49.847984,
+                        "lat": 18.180119
                      },
                      "street": "Průběžná 1",
                      "city": "Ostrava Poruba",

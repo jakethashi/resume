@@ -134,6 +134,10 @@ body {
   z-index: 1;
 }
 
+.google-map {
+  height: 250px;
+}
+
 /* MAIN NAVIGATION */
 .nav-wrapper {
   width: 100%;
@@ -588,9 +592,6 @@ body {
 }
 #footer #contact-me .item .content {
   margin: 15px 0 15px 0;
-}
-#footer #contact-me .item #map {
-  max-width: 400px;
 }
 #footer #contact-me #phone .phone-number {
   color: #dedede;

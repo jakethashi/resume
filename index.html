@@ -338,12 +338,7 @@
 
                                 <br />
 
-                                <a href="https://goo.gl/maps/bsnAq" target="_new">
-                                    <!--<div id="map-canvas" class="col-xs-12 col-md-6 wow fadeIn map rounded"></div>-->
-                                    <!-- build:[src] files/img/map.jpg -->
-                                    <img id="map" class="col-xs-12 col-md-6 wow fadeIn" src="app/img/map.jpg">
-                                    <!-- /build -->
-                                </a>
+                                <div google-map ng-model="mscvCtrl.contact.address" class="col-xs-12 col-md-6 google-map"></div>
                             </div>
                             <!-- /.content-->
                         </div>
@@ -462,6 +457,8 @@
     <script src="/bower_components/jquery-easing/jquery.easing.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="app/scripts/vendor/wow/dist/wow.js"></script>
+    <script src="app/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js"></script>
+    
 
     <!-- angular -->
     <script src="/bower_components/angular/angular.js"></script>

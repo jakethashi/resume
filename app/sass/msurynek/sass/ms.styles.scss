@@ -103,9 +103,13 @@ body {
 		right: 0; 
 		border: 0;	
 		z-index: 1;
-	}
-	
+	}	
 }
+
+.google-map {
+	height: 250px;	
+}			
+
 
 
 /* MAIN NAVIGATION */
@@ -715,10 +719,6 @@ body {
 
 			.content {
 				margin: 15px 0 15px 0;
-			}
-
-			#map {
-				max-width: 400px;
 			}
 		}
 

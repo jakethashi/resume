@@ -33,7 +33,7 @@ angular
         var vm = this;
         
         $('.logo').css({  opacity: 1 });
-        new WOW().init();        
+        new WOW().init();
     }])
     .controller('MscvCtrl', [
         'BASE_URI',
@@ -81,6 +81,22 @@ angular
         $http.get(REST_API_URI + 'content.js')
           .then(contentDataLoad)
           .catch(contentDataError);
+
+        function initLazyMap(reponse) {
+            var gps = reponse.data.contact.address.tags.address.gps;
+            $( '.google-map' ).lazyLoadGoogleMaps({
+                callback: function( container, map ){
+                    var $container = $( container ),
+                        center = new google.maps.LatLng( 
+                            gps.long,
+                            gps.lat 
+                        );
+
+                    map.setOptions({ zoom: 15, center: center });
+                    new google.maps.Marker({ position: center, map: map });
+                }
+            });
+        }
 
         function contentDataLoad(reponse) {
             $.extend(vm, reponse.data);
