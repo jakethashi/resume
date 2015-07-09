@@ -325,7 +325,25 @@
             "level":70,
             "icon":"net",
             "type":"backEnd"
-         }
+         },
+         {
+            "title":"React",
+            "level":40,
+            "icon":"react",
+            "type":"frameworks"
+         },
+         {
+            "title":"Coffeescript",
+            "level":10,
+            "icon":"coffee",
+            "type":"frontEnd"
+         },
+         {
+            "title":"ES6",
+            "level":10,
+            "icon":"ecma",
+            "type":"frontEnd"
+         }         
       ]
    }
 }

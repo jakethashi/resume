@@ -585,7 +585,19 @@ body {
 
   					&.sprite-net {
   						background-position: 0 -150px;
-  					}  					
+  					}
+
+  					&.sprite-react {
+  						background-position: -375px -150px;
+  					}
+					
+					&.sprite-coffee {
+  						background-position: -450px -150px;
+  					}
+  					
+					&.sprite-ecma {
+  						background-position: -525px -150px;
+  					}
 				}
 			}
 
@@ -732,7 +744,7 @@ body {
   					}
 
   					&.sprite-icon-stack-overflow {
-  						background-position: -525px -224px;
+  						background-position: -525px -225px;
   					}
 				}
 			}
@@ -755,10 +767,22 @@ body {
 }
 
 #map-canvas  {
-	//width: 300px;
 	height: 300px;
 	margin: 0;
 	padding: 0;
+}
+
+/* extra hacks */
+@media only screen and (max-width: 425px) {
+    #main-content {
+
+        #skills {
+            .item .level {
+            	width: 50px;
+            	position: absolute;
+            }
+        }
+    }
 }
 
 @import 'ms.tablet.styles.scss';

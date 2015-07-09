@@ -493,6 +493,15 @@ body {
 #main-content #skills .item .icon div.sprite-net {
   background-position: 0 -150px;
 }
+#main-content #skills .item .icon div.sprite-react {
+  background-position: -375px -150px;
+}
+#main-content #skills .item .icon div.sprite-coffee {
+  background-position: -450px -150px;
+}
+#main-content #skills .item .icon div.sprite-ecma {
+  background-position: -525px -150px;
+}
 #main-content #skills .item .title {
   text-transform: uppercase;
   color: #0d78a0;
@@ -600,7 +609,7 @@ body {
   background-position: -450px -224px;
 }
 #footer #contact-me #fallow-me .icons .icon.sprite-icon-stack-overflow {
-  background-position: -525px -224px;
+  background-position: -525px -225px;
 }
 #footer #contact-me #about .more {
   color: #209fcf;
@@ -618,6 +627,13 @@ body {
   padding: 0;
 }
 
+/* extra hacks */
+@media only screen and (max-width: 425px) {
+  #main-content #skills .item .level {
+    width: 50px;
+    position: absolute;
+  }
+}
 @media only screen and (min-width: 768px) {
   /* HEADER */
   .header {
