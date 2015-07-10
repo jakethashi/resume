@@ -22,10 +22,9 @@
     "grunt-contrib-watch": "~0.4.4",
     "grunt-htmlhint": "^0.4.1",
     "grunt-ng-annotate": "^1.0.1",
-    "grunt-ng-constant": "^1.1.0",
     "grunt-processhtml": "^0.3.8",
     "http-server": "^0.6",
-    "matchdep": "^0.3.0",
+    "load-grunt-tasks": "^3.2.0",
     "react-tools": "^0.13.3"
   },
   "scripts": {
