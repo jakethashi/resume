@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 					'<%= config.src %>/scripts/filters.js',
 					'<%= config.src %>/scripts/services/*.js'				
 				],
-				dest: '<%= config.dest %>/files/js/main.js'
+				dest: '<%= config.dest %>/files/js/main.min.js'
 			},
 			vendorScripts: {
 				src: [
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
 					'<%= config.src %>/scripts/vendor/wow/dist/wow.js',
 					'<%= config.src %>/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js'					
 				],
-				dest: '<%= config.dest %>/files/js/vendor.js'
+				dest: '<%= config.dest %>/files/js/vendor.min.js'
 			},
 			css: {
 				src: [
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
 		ngAnnotate: {
 	        angular: {
 	            files: {
-	                '<%= config.dest %>/files/js/main.js': ['<%= config.dest %>/files/js/main.js']
+	                '<%= config.dest %>/files/js/main.min.js': ['<%= config.dest %>/files/js/main.min.js']
 	            },
 	        }
 	    },
@@ -167,14 +167,14 @@ module.exports = function(grunt) {
 			main: {
 				name: 'main.min.js',
 				files: [{
-					src: '<%= config.dest %>/files/js/main.js',
+					src: '<%= config.dest %>/files/js/main.min.js',
 					dest: '<%= config.dest %>/files/js/main.min.js'
 				}]
 			},
 			vendor: {
 				name: 'vendor.min.js',
 				files: [{
-					src: '<%= config.dest %>/files/js/vendor.js',
+					src: '<%= config.dest %>/files/js/vendor.min.js',
 					dest: '<%= config.dest %>/files/js/vendor.min.js'
 				}]
 			}
