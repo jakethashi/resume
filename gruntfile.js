@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 	grunt.verbose.ok();
-  
+
 	grunt.initConfig({
 		config: {
 			src: 'app',
@@ -23,14 +23,14 @@ module.exports = function(grunt) {
 
 		processhtml: {
 			index: {
-			  files: {
-				'<%= config.dest %>/index.html': ['index.html']
-			  }
+				files: {
+					'<%= config.dest %>/index.html': ['index.html']
+				}
 			}, 
 			learn: {
-			  files: {
-				'<%= config.dest %>/learnmore.html': ['learnmore.html']
-			  }
+				files: {
+					'<%= config.dest %>/learnmore.html': ['learnmore.html']
+				}
 			}
 		},	
 
@@ -44,8 +44,8 @@ module.exports = function(grunt) {
 			html: {
 				expand: true,
 				src: [
-					'index.html', 
-					'learnmore.html'
+				'index.html', 
+				'learnmore.html'
 				],
 				dest: '<%= config.dest %>/'
 			},
@@ -88,19 +88,19 @@ module.exports = function(grunt) {
 
 		concat: {
 			options: {
-			  separator: '',
+				separator: '',
 			},
 			scripts: {
-			  src: [
-				// my scripts
-				'<%= config.src %>/scripts/main.js',
-				'<%= config.src %>/scripts/srv-config.js',
-				'<%= config.src %>/scripts/controllers.js',
-				'<%= config.src %>/scripts/directives.js',
-				'<%= config.src %>/scripts/filters.js',
-				'<%= config.src %>/scripts/services.js'				
-			  ],
-			  dest: '<%= config.dest %>/files/js/main.min.js',
+				src: [
+					// my scripts
+					'<%= config.src %>/scripts/main.js',
+					'<%= config.src %>/scripts/srv-config.js',
+					'<%= config.src %>/scripts/controllers/*.js',
+					'<%= config.src %>/scripts/directives/*.js',
+					'<%= config.src %>/scripts/filters.js',
+					'<%= config.src %>/scripts/services/*.js'				
+				],
+				dest: '<%= config.dest %>/files/js/main.js'
 			},
 			vendorScripts: {
 				src: [
@@ -114,35 +114,41 @@ module.exports = function(grunt) {
 					'bower_components/angular-resource/angular-resource.js',
 					'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
 					'<%= config.src %>/scripts/vendor/wow/dist/wow.js',
-					'<%= config.src %>/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js',
-					
+					'<%= config.src %>/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js'					
 				],
-				dest: '<%= config.dest %>/files/js/vendor.min.js',
-
+				dest: '<%= config.dest %>/files/js/vendor.js'
 			},
 			css: {
-			  src: [
-				'<%= config.src %>/css/normalize.css',
-				'bower_components/bootstrap/dist/css/bootstrap.css',
-				'bower_components/font-awesome/css/font-awesome.css',
-				'<%= config.src %>/css/animate.css',
-				'<%= config.src %>/css/ms.styles.css'
-			  ],
-			  dest: '<%= config.dest %>/files/css/styles.css',
+				src: [
+					'<%= config.src %>/css/normalize.css',
+					'bower_components/bootstrap/dist/css/bootstrap.css',
+					'bower_components/font-awesome/css/font-awesome.css',
+					'<%= config.src %>/css/animate.css',
+					'<%= config.src %>/css/ms.styles.css'
+				],
+				dest: '<%= config.dest %>/files/css/styles.css'
 			}
-		  },
+		},
+
+		ngAnnotate: {
+	        angular: {
+	            files: {
+	                '<%= config.dest %>/files/js/main.js': ['<%= config.dest %>/files/js/main.js']
+	            },
+	        }
+	    },
 
 		cssmin: {
-		  options: {
-			shorthandCompacting: false,
-			roundingPrecision: -1,
-			keepSpecialComments: 0
-		  },
-		  target: {
-			files: {
-			  '<%= config.dest %>/files/css/styles.css': ['<%= config.dest %>/files/css/styles.css']
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1,
+				keepSpecialComments: 0
+			},
+			target: {
+				files: {
+					'<%= config.dest %>/files/css/styles.css': ['<%= config.dest %>/files/css/styles.css']
+				}
 			}
-		  }
 		},
 
 		uglify: {
@@ -161,21 +167,24 @@ module.exports = function(grunt) {
 			main: {
 				name: 'main.min.js',
 				files: [{
-					src: '<%= config.dest %>/files/js/main.min.js',
+					src: '<%= config.dest %>/files/js/main.js',
 					dest: '<%= config.dest %>/files/js/main.min.js'
 				}]
 			},
 			vendor: {
 				name: 'vendor.min.js',
 				files: [{
-					src: '<%= config.dest %>/files/js/vendor.min.js',
+					src: '<%= config.dest %>/files/js/vendor.js',
 					dest: '<%= config.dest %>/files/js/vendor.min.js'
 				}]
 			}
-		},        
+		},
+
 		jshint: {
-			files: [
-				'<%= config.src %>/scripts/*.js'
+			all: [
+				'<%= config.src %>/scripts/**/*.js',
+				'gruntfile.js',
+				'!<%= config.src %>/scripts/vendor/**/*.js'
 			],
 			options: {
 				undef: true,
@@ -195,27 +204,28 @@ module.exports = function(grunt) {
 			}
 		},
 		htmlhint: {
-		  options: {
-			htmlhintrc: '.htmlhintrc'
-		  },
-		  html: {
-			src: ['**.html']
-		  }
+			options: {
+				htmlhintrc: '.htmlhintrc'
+			},
+			html: {
+				src: ['**.html']
+			}
 		}
-    });
+	});
 
-    grunt.loadNpmTasks('grunt-processhtml');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-processhtml');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-ng-annotate');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-htmlhint');
 	grunt.loadNpmTasks('grunt-beep');
-	
+
 	// Load plugins
 	//require("matchdep")
 	//	.filterDev("grunt-*")
@@ -226,6 +236,7 @@ module.exports = function(grunt) {
 		'cleanBuild',
 		
 		'concat:scripts',
+		'ngAnnotate',
 		'concat:vendorScripts',
 		'concat:css',		
 
@@ -246,9 +257,4 @@ module.exports = function(grunt) {
 		'cssmin',
 		'beep'
 	]);
-	
-	grunt.registerTask('testik', function() {
-		debugger;
-	});
-
 };
