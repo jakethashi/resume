@@ -506,6 +506,9 @@ body {
 #main-content #skills .item .icon div.sprite-ecma {
   background-position: -525px -150px;
 }
+#main-content #skills .item .icon div.sprite-mongodb {
+  background-position: -600px -150px;
+}
 #main-content #skills .item .title {
   text-transform: uppercase;
   color: #0d78a0;
@@ -611,6 +614,9 @@ body {
 }
 #footer #contact-me #fallow-me .icons .icon.sprite-icon-stack-overflow {
   background-position: -525px -225px;
+}
+#footer #contact-me #fallow-me .icons .icon.sprite-icon-github {
+  background-position: 0 -225px;
 }
 #footer #contact-me #about .more {
   color: #209fcf;

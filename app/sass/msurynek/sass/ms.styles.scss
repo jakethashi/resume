@@ -602,6 +602,10 @@ body {
 					&.sprite-ecma {
   						background-position: -525px -150px;
   					}
+
+  					&.sprite-mongodb {
+  						background-position: -600px -150px;
+  					}
 				}
 			}
 
@@ -745,6 +749,10 @@ body {
 
   					&.sprite-icon-stack-overflow {
   						background-position: -525px -225px;
+  					}
+
+  					&.sprite-icon-github {
+  						background-position: 0 -225px;
   					}
 				}
 			}

@@ -54,6 +54,11 @@
                      "title": "Stack overflow",
                      "icon": "stack-overflow",
                      "url": "http://stackoverflow.com/users/2476036/martin-surynek"
+                  },
+                  {
+                     "title": "Github",
+                     "icon": "github",
+                     "url": "https://github.com/jakethashi/resume"
                   }
                ],
                "icon": "fa-connectdevelop fa-3x"
@@ -343,7 +348,13 @@
             "level":10,
             "icon":"ecma",
             "type":"frontEnd"
-         }         
+         },
+         {
+            "title":"MongoDb",
+            "level":10,
+            "icon":"mongodb",
+            "type":"backEnd"
+         }
       ]
    }
 }
