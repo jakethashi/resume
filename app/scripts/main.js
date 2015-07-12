@@ -9,7 +9,6 @@ function config($httpProvider) {
         return {
             responseError: function (response) {
                 function responseErrorCallback(modal, $http, $rootScope, $q) {
-                    debugger;
                     if (response.status === 404) {
                         return modal.notFound();
                     }
