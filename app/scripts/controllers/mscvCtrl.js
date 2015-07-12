@@ -2,32 +2,10 @@ angular
     .module('mscv')
     .controller('MscvCtrl', MscvCtrl);
 
-function MscvCtrl(BASE_URI, REST_API_URI, $rootScope, $http, $location) {
+function MscvCtrl($http, REST_API_URI, skills) {
     var vm = this;
 
-    // TODO: populate filters from external service
-    vm.skillFilter = [{
-        title: 'All',
-        type: ''
-    }, {
-        title: 'Front-end',
-        type: 'frontEnd'
-    }, {
-        title: 'Back-end',
-        type: 'backEnd'
-    }, {
-        title: 'Frameworks',
-        type: 'frameworks'
-    },{
-        title: 'Libraries',
-        type: 'libraries'
-    }, {
-        title: 'Design',
-        type: 'design'
-    }, {
-        title: 'Tools',
-        type: 'tools'
-    }];
+    vm.skillFilter = skills.skillFilter;
 
     vm.skillFilterSelect = '';
     vm.skillItemsLimit = 10;
@@ -36,25 +14,9 @@ function MscvCtrl(BASE_URI, REST_API_URI, $rootScope, $http, $location) {
       .then(contentDataLoad)
       .catch(contentDataError);
 
-    function initLazyMap(reponse) {
-        var gps = reponse.data.contact.address.tags.address.gps;
-        $( '.google-map' ).lazyLoadGoogleMaps({
-            callback: function( container, map ){
-                var $container = $( container ),
-                    center = new google.maps.LatLng( 
-                        gps.long,
-                        gps.lat 
-                    );
-
-                map.setOptions({ zoom: 15, center: center });
-                new google.maps.Marker({ position: center, map: map });
-            }
-        });
-    }
-
-    function contentDataLoad(reponse) {
-        $.extend(vm, reponse.data);
-        
+    function contentDataLoad(response) {
+        $.extend(vm, response.data);
+       
         $('.logo').css({  opacity: 1 });
         new WOW().init();
     }

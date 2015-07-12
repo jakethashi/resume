@@ -113,7 +113,8 @@ module.exports = function(grunt) {
 					'bower_components/angular-ui-router/release/angular-ui-router.js',
 					'bower_components/angular-resource/angular-resource.js',
 					'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-					'<%= config.src %>/scripts/vendor/wow/dist/wow.js',
+					'bower_components/wow/dist/wow.js',
+					'bower_components/underscore/underscore.js',
 					'<%= config.src %>/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js'					
 				],
 				dest: '<%= config.dest %>/files/js/vendor.min.js'

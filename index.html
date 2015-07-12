@@ -237,7 +237,7 @@
                 <div class="col-xs-12 buttons-wrapper">
                     <ul class="buttons" ng-click="mscvCtrl.filterSkills($event)">
                         <li ng-repeat="item in mscvCtrl.skillFilter">
-                            <a data-type="{{ item.type }}" class="btn btn-default {{ (item.type == 'all' && !mscvCtrl.skillFilterSelect) || item.type === mscvCtrl.skillFilterSelect ? 'btn-active' : '' }}" href="#">{{ item.title}}</a>
+                            <span data-type="{{ item.type }}" class="btn btn-default {{ (item.type == 'all' && !mscvCtrl.skillFilterSelect) || item.type === mscvCtrl.skillFilterSelect ? 'btn-active' : '' }}">{{ item.title}}</span>
                         </li>
                     </ul>
                 </div>
@@ -456,7 +456,8 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/jquery-easing/jquery.easing.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="app/scripts/vendor/wow/dist/wow.js"></script>
+    <script src="/bower_components/wow/dist/wow.js"></script>
+    <script src="/bower_components/underscore/underscore.js"></script>
     <script src="app/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js"></script>
     
 
@@ -477,6 +478,7 @@
     <script src="app/scripts/controllers/mscvMainCtrl.js"></script>
     <script src="app/scripts/services/modal.js"></script>
     <script src="app/scripts/services/utils.js"></script>
+    <script src="app/scripts/services/skills.js"></script>
     <script src="app/scripts/directives/activeFilter.js"></script>
     <script src="app/scripts/directives/googleMap.js"></script>
     <script src="app/scripts/directives/scrollSpy.js"></script>
