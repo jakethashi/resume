@@ -2,6 +2,15 @@
   "name": "cv",
   "description": "Resume about my IT knowledges.",
   "version": "1.0.0",
+  "author": {
+    "name": "Martin Surynek",
+    "url": "http://msurynek.com"
+  },
+  "homepage": "http://msurynek.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jakethashi/resume.git"
+  },
   "licenses": [
     {
       "type": "MIT",
@@ -21,10 +30,18 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-htmlhint": "^0.4.1",
+    "grunt-karma": "^0.11.2",
     "grunt-ng-annotate": "^1.0.1",
     "grunt-processhtml": "^0.3.8",
     "http-server": "^0.6",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-nested-reporter": "^0.1.3",
+    "karma-phantomjs-launcher": "^0.2.0",
     "load-grunt-tasks": "^3.2.0",
+    "phantomjs": "^1.9.17",
     "react-tools": "^0.13.3"
   },
   "scripts": {

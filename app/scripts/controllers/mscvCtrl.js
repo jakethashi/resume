@@ -2,15 +2,14 @@ angular
     .module('mscv')
     .controller('MscvCtrl', MscvCtrl);
 
-function MscvCtrl($http, REST_API_URI, skills) {
+function MscvCtrl(skills, dataservice) {
     var vm = this;
-
     vm.skillFilter = skills.skillFilter;
 
     vm.skillFilterSelect = '';
     vm.skillItemsLimit = 10;
 
-    $http.get(REST_API_URI + 'content.js')
+    dataservice.getAppContent()
       .then(contentDataLoad)
       .catch(contentDataError);
 

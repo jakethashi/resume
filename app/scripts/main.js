@@ -1,5 +1,5 @@
 angular
-    .module("mscv", ['ngResource', 'ui.bootstrap'])
+    .module("mscv", ['ui.bootstrap'])
     .config(config);
 
 function config($httpProvider) {

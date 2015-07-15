@@ -180,7 +180,19 @@ module.exports = function(grunt) {
                 }]
             }
         },
-
+        // test section
+        karma: {
+            unitTest: {
+                configFile: 'test/karma.conf.js',
+                singleRun: true
+            },
+            watch: {
+                configFile: 'test/karma.conf.js'
+            },
+            smokeTest: {
+                // TODO: create smoke tests after deploy prod package
+            }
+        },
         jshint: {
             all: [
                 '<%= config.src %>/scripts/**/*.js',
@@ -237,6 +249,7 @@ module.exports = function(grunt) {
     grunt.registerTask('server', [
         'jshint',
         'htmlhint',
+        'karma:unitTest',
         'deploy', 
         'uglify', 
         'cssmin',
