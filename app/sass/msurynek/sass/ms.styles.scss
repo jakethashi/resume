@@ -22,17 +22,34 @@ body {
     outline: none;
 }
 
+/* general styles */
+#github {
+    display: none;
+    
+    img {
+        position: fixed; 
+        top: 0; 
+        right: 0; 
+        border: 0;  
+        z-index: 1;
+    }   
+}
+
+.google-map {
+    height: 250px;  
+}           
+
+
 /* mobile first */
 /* HEADER */
 
 .header {
-    // TODO: gradient here
     background-color: $header-bg-colorLeft;
     @include background-image(
         linear-gradient(
             230deg,
             $color-extradark-blue 20%, 
-            red 100%//$color-extradark2-blue 100%
+            red 100%
         )
     );
 
@@ -40,7 +57,6 @@ body {
     padding: 0 0 160px 0;
     color: $header-text-color;
     min-height: 250px;
-    //transform-style: preserve-3d;
 
     .logo {
         @include border-radius(
@@ -93,24 +109,6 @@ body {
         margin-top: -178px;
     }
 }
-
-#github {
-    display: none;
-    
-    img {
-        position: fixed; 
-        top: 0; 
-        right: 0; 
-        border: 0;  
-        z-index: 1;
-    }   
-}
-
-.google-map {
-    height: 250px;  
-}           
-
-
 
 /* MAIN NAVIGATION */
 .nav-wrapper {
@@ -229,19 +227,12 @@ body {
 }
 
 .nav-force-wrapper {
-    /*#main-navigation {
-        margin-left: 20px;
-        margin-top: 10px;
-        width: 150px;
-    }*/
-    
     .navbar-nav a {
         text-align: center;
     }
 }
 
 /* MAIN */
-
 #main-content, 
 #footer {
     h2, h3 {
@@ -259,10 +250,6 @@ body {
     .section-block {
         padding: 0;
         overflow: hidden;
-
-        .item {
-            //padding-left: 0;
-        }
     }
 }
 
@@ -316,8 +303,6 @@ body {
             }
         }
     }
-
-
 
     #certificates {
         .item {
@@ -415,7 +400,6 @@ body {
         }       
     }
 
-
     #education {
 
         .item {
@@ -430,22 +414,16 @@ body {
             &:nth-child(2n) {
                 clear: both;
             }
-
         }
     }
 
     #skills {
         .description {
             padding-bottom: 20px;
-            //padding-left: 0;
         }
         
-
         .buttons-wrapper {
-            //padding: 0 0 40px 0px;
-            
             .buttons {
-                //margin: 0 auto;
                 list-style: none;
                 font-weight: 900;
                 padding-left: 0;
@@ -469,8 +447,6 @@ body {
                         background: $color-light-blue !important;
                     }
                 }
-
-
             }
         }
 
@@ -486,8 +462,6 @@ body {
                 padding-right: 0;
                 
                 div {
-                    //width: 100%;
-                    //max-width: 75px;
                     
                     img {
                         border: 1px solid red;

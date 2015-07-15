@@ -53,6 +53,22 @@ body {
   outline: none;
 }
 
+/* general styles */
+#github {
+  display: none;
+}
+#github img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 1;
+}
+
+.google-map {
+  height: 250px;
+}
+
 /* mobile first */
 /* HEADER */
 .header {
@@ -121,21 +137,6 @@ body {
   display: none;
   background: transparent;
   margin-top: -178px;
-}
-
-#github {
-  display: none;
-}
-#github img {
-  position: fixed;
-  top: 0;
-  right: 0;
-  border: 0;
-  z-index: 1;
-}
-
-.google-map {
-  height: 250px;
 }
 
 /* MAIN NAVIGATION */
@@ -232,13 +233,6 @@ body {
   color: #F3F3F3;
 }
 
-.nav-force-wrapper {
-  /*#main-navigation {
-      margin-left: 20px;
-      margin-top: 10px;
-      width: 150px;
-  }*/
-}
 .nav-force-wrapper .navbar-nav a {
   text-align: center;
 }
