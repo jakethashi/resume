@@ -1,0 +1,15 @@
+{
+  "framework": "jasmine",
+  "src_files": [
+    "bower_components/jquery/dist/jquery.js",
+	"bower_components/jquery-easing/jquery.easing.js",
+	"bower_components/bootstrap/dist/js/bootstrap.js",
+	"bower_components/angular/angular.js",
+	"bower_components/angular-ui-router/release/angular-ui-router.js",
+	"bower_components/angular-resource/angular-resource.js",
+	"bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+	"bower_components/wow/dist/wow.js",
+	"bower_components/underscore/underscore.js",
+    "app/**/*.js"
+  ]
+}
