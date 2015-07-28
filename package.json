@@ -46,6 +46,7 @@
     "react-tools": "^0.13.3"
   },
   "scripts": {
-    "start": "http-server -a localhost -p 85"
+    "start": "http-server -a localhost -p 85",
+    "test": "grunt tests"
   }
 }
