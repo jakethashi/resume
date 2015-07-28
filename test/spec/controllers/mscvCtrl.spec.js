@@ -18,6 +18,10 @@ describe('Controller: MscvCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope, $q) {
     scope = $rootScope.$new();
 
+    var globalsProviderMock = {
+      skillItemsLimit: 10
+    };
+
     MscvCtrl = $controller('MscvCtrl', {
       skills: skillsMock,
       dataservice: {
@@ -25,7 +29,8 @@ describe('Controller: MscvCtrl', function () {
           var deferred = $q.defer();
           return deferred.promise;
         }
-      }
+      },
+      globals: globalsProviderMock
       //$scope: scope
     });
   }));
