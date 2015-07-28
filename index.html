@@ -39,12 +39,12 @@
 
     <header class="header">
         <a href="/">
-            <div class="logo"></div>
+            <div class="logo logo-{{ mscvCtrl.isLogoVisible ? 'visible' : 'hidden' }}"></div>
         </a>
         <h1 class="title">Martin Surynek</h1>
         <div class="container">
             <div class="row">
-                <span class="col-xs-12 small-title">UI / UX Web Developer</span>
+                <span class="col-xs-12 small-title">UI Web Developer</span>
             </div>
         </div>
     </header>
@@ -100,7 +100,7 @@
             <!-- introduction -->
             <div class="col-xs-12">
                 <h3 class="introduction">Who am I?</h3>
-                <p>Hi, i’m UI/UX Web Developer with passion for new trends and technology related with web development, mobile development and graphics design. Especially for tools which may  increase web performance and efficiency, look and fell and user experience with web application. Basically I like to find challenges to be able to overcome them and create better user experience and satisfy the users with the quality and successfully fulfill desired solution.</p>
+                <p>Hi, i’m UI Web Developer with passion for new trends and technology related with web development, mobile development and graphics design. Especially for tools which may  increase web performance and efficiency, look and fell and user experience with web application. Basically I like to find challenges to be able to overcome them and create better user experience and satisfy the users with the quality and successfully fulfill desired solution.</p>
             </div>
 
             <!-- work experience -->
@@ -479,6 +479,7 @@
     <script src="app/scripts/services/modal.js"></script>
     <script src="app/scripts/services/utils.js"></script>
     <script src="app/scripts/services/skills.js"></script>
+    <script src="app/scripts/services/globals.js"></script>
     <script src="app/scripts/services/dataservice.js"></script>
     <script src="app/scripts/directives/activeFilter.js"></script>
     <script src="app/scripts/directives/googleMap.js"></script>

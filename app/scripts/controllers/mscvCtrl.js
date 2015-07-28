@@ -2,26 +2,22 @@ angular
     .module('mscv')
     .controller('MscvCtrl', MscvCtrl);
 
-function MscvCtrl(skills, dataservice) {
+function MscvCtrl(skills, dataservice, globals) {
     var vm = this;
     vm.skillFilter = skills.skillFilter;
 
     vm.skillFilterSelect = '';
-    vm.skillItemsLimit = 10;
+    vm.skillItemsLimit = globals.skillItemsLimit;
+    vm.isLogoVisible = false;
 
     dataservice.getAppContent()
-      .then(contentDataLoad)
-      .catch(contentDataError);
+      .then(contentDataLoad);
 
     function contentDataLoad(response) {
-        $.extend(vm, response.data);
+        $.extend(vm, response);
        
-        $('.logo').css({  opacity: 1 });
+        vm.isLogoVisible = true;
         new WOW().init();
-    }
-
-    function contentDataError() {
-        console.log('error while getting a data');
     }
 
     vm.filterSkills = function($event) {
@@ -30,10 +26,10 @@ function MscvCtrl(skills, dataservice) {
     };
 
     vm.skillsShowMoreLess = function() {
-        if (vm.skillItemsLimit === 10) {
+        if (vm.skillItemsLimit === globals.skillItemsLimit) {
             vm.skillItemsLimit = 1000;
         } else {
-            vm.skillItemsLimit = 10;
+            vm.skillItemsLimit = globals.skillItemsLimit;
         }
     };
 }

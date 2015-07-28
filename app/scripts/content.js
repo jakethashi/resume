@@ -1,8 +1,6 @@
 {
       "name": "Martin",
       "surname": "Surynek",
-      "role": "UI / UX maniac",
-
          "contact": {
             "title": "Contact me",
             "description": "I can work with you, just let me known when.",
@@ -62,12 +60,7 @@
                   }
                ],
                "icon": "fa-connectdevelop fa-3x"
-            },
-            "introduction": {
-               "title": "Hi, i’m UI/UX Web Developer",
-               "description": "with passion for new trends and technology related with web development and graphics. Especially for tools which may  increase web performance and efficiency, look and fell and user experience with web application. Basically I like to find challenges to be able to overcome them and create better user experience and satisfy the users with the quality and successfully fulfill desired solution."
             }
-         
       },
       "about":{
             "title": "Behind the scene",

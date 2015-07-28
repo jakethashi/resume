@@ -79,6 +79,13 @@ body {
         &.loading {
             background: orange;
         }
+
+        &.logo-visible {
+            opacity: 1;
+        }
+        &.logo-hidden {
+            opacity: 0;
+        }
     }
 
     .title {

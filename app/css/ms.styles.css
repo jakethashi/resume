@@ -113,6 +113,12 @@ body {
 .header .logo.loading {
   background: orange;
 }
+.header .logo.logo-visible {
+  opacity: 1;
+}
+.header .logo.logo-hidden {
+  opacity: 0;
+}
 .header .title {
   font-size: 38px;
   font-weight: 800;

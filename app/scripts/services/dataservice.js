@@ -9,10 +9,16 @@ function dataservice($http, REST_API_URI) {
 
 	function dataServiceError() {
 		// TODO: handle error globally
+		if (window.console) {
+			console.log('error while getting a data');
+		}
 	}
 
 	function getAppContent() {
 		return $http.get(REST_API_URI + 'content.js')
+			.then(function(response) {
+				return response.data;
+			})
       		.catch(dataServiceError);
 	}
 }
