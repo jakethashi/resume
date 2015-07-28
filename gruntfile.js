@@ -246,10 +246,13 @@ module.exports = function(grunt) {
         'copy:img', 
         'copy:views'        
     ]);
-    grunt.registerTask('server', [
+    grunt.registerTask('tests', [
         'jshint',
         'htmlhint',
-        'karma:unitTest',
+        'karma:unitTest'
+    ]);
+    grunt.registerTask('server', [
+        'tests',
         'deploy', 
         'uglify', 
         'cssmin',
