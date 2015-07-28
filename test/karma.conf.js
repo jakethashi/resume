@@ -1,7 +1,7 @@
 module.exports = function(config) {
   'use strict';
 
-  config.set({
+  var configuration = {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
@@ -77,7 +77,20 @@ module.exports = function(config) {
     // },
     // URL root prevent conflicts with the site root
     // urlRoot: '_karma_'
-    reporters: ['nested']
+    reporters: ['nested'],
 
-  });
+    customLaunchers: {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    }
+
+  }
+
+  if (process.env.TRAVIS) {
+      configuration.browsers = ['Chrome_travis_ci'];
+  }
+
+  config.set(configuration);
 };
