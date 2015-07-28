@@ -1,4 +1,6 @@
-# Resume
+# Resume [![Build Status: Linux](https://travis-ci.org/jakethashi/resume.svg?branch=master)](https://travis-ci.org/jakethashi/resume)
+
+
 Hello folks,  
 here you can explore my personal resume describing my IT knowledge and 
 my career in computer science in general. You can use the code stored in this repo 
