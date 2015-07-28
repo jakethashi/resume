@@ -38,7 +38,7 @@ module.exports = function(config) {
     ],
 
     // web server port
-    port: 9876,
+    //port: 9876,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -49,8 +49,8 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      //"Chrome",
-      "PhantomJS",
+      "Chrome",
+      //"PhantomJS",
     ],
 
     // Which plugins to enable
