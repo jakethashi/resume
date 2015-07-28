@@ -152,6 +152,13 @@ module.exports = function(grunt) {
             }
         },
 
+        autoprefixer: {
+            build: {
+                src: '<%= config.dest %>/files/css/styles.css',
+                dest: '<%= config.dest %>/files/css/styles.css'
+            }
+        },
+
         uglify: {
             options: {
                 banner: 
@@ -235,7 +242,8 @@ module.exports = function(grunt) {
         'concat:scripts',
         'ngAnnotate',
         'concat:vendorScripts',
-        'concat:css',       
+        'concat:css',
+        'autoprefixer',
 
         'copy:html', 
         'copy:fonts',
