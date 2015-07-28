@@ -51,6 +51,6 @@
   },  
   "scripts": {
     "start": "http-server -a localhost -p 85",
-    "test": "grunt tests"
+    "test": "grunt test"
   }
 }
