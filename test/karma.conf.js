@@ -38,7 +38,7 @@ module.exports = function(config) {
     ],
 
     // web server port
-    port: 831,
+    port: 9876,
 
     // Start these browsers, currently available:
     // - Chrome
