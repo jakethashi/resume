@@ -41,8 +41,8 @@
                ],
                "icon": "fa-phone fa-3x"
             },
-            "fallowMe":{
-               "title": "Fallow Me",
+            "followMe":{
+               "title": "Follow Me",
                "description": [{
                      "title": "linked in",
                      "icon": "linked-in",

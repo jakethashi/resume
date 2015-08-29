@@ -601,21 +601,21 @@ body {
   text-decoration: none;
   cursor: text;
 }
-#footer #contact-me #fallow-me .icons {
+#footer #contact-me #follow-me .icons {
   margin-top: 20px;
 }
-#footer #contact-me #fallow-me .icons .icon {
+#footer #contact-me #follow-me .icons .icon {
   width: 75px;
   height: 75px;
   background: url(../img/sprites.png) no-repeat 0px 0px;
 }
-#footer #contact-me #fallow-me .icons .icon.sprite-icon-linked-in {
+#footer #contact-me #follow-me .icons .icon.sprite-icon-linked-in {
   background-position: -450px -224px;
 }
-#footer #contact-me #fallow-me .icons .icon.sprite-icon-stack-overflow {
+#footer #contact-me #follow-me .icons .icon.sprite-icon-stack-overflow {
   background-position: -525px -225px;
 }
-#footer #contact-me #fallow-me .icons .icon.sprite-icon-github {
+#footer #contact-me #follow-me .icons .icon.sprite-icon-github {
   background-position: 0 -225px;
 }
 #footer #contact-me #about .more {
