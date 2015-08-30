@@ -1,12 +1,16 @@
-angular
-    .module('mscv')
-    .filter('range', range);
+(function() {
+    'use strict';
 
-function range() {
-    return function (input, total) {
-        total = parseInt(total);
-        for (var i = 0; i < total; i++)
-            input.push(i);
-        return input;
-    };
-}
+    angular
+	    .module('mscv')
+	    .filter('range', range);
+
+	function range() {
+	    return function (input, total) {
+	        total = parseInt(total);
+	        for (var i = 0; i < total; i++)
+	            input.push(i);
+	        return input;
+	    };
+	}
+})();

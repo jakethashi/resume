@@ -1,13 +1,18 @@
-angular
-    .module('mscv')
-    .controller('ModalController', ModalController);
+(function() {
+    'use strict';
 
-function ModalController($modalInstance) {
-    var vm = this;
+	angular
+	    .module('mscv')
+	    .controller('ModalController', ModalController);
 
-    vm.cancel = function() {
-        $modalInstance.dismiss('cancel');
-    };
+	function ModalController($modalInstance) {
+	    var vm = this;
 
-    vm.errorDetail = 'an error occurred';
-}
+	    vm.cancel = function() {
+	        $modalInstance.dismiss('cancel');
+	    };
+
+	    vm.errorDetail = 'an error occurred';
+	}
+    
+})();

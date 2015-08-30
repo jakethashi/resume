@@ -1,23 +1,28 @@
-angular
-    .module('mscv')
-    .service('utils', utils);
-
-function utils($q) {
+(function() {
+    'use strict';
     
-    this.isMobileView = function () {
-        return $('.navbar-toggle').is(':visible');
-    };
+    angular
+        .module('mscv')
+        .service('utils', utils);
 
-    this.toPromise = function (args, condition) {
-        var deferred = $q.defer();
+    function utils($q) {
+        /*jshint validthis: true */
+        
+        this.isMobileView = function () {
+            return $('.navbar-toggle').is(':visible');
+        };
 
-        if (typeof condition === 'function') {
-            condition.call(this, deferred, args);
-        } else {
-            deferred.resolve({
-                success: false
-            });
-        }
-        return deferred.promise;
-    };
-}    
+        this.toPromise = function (args, condition) {
+            var deferred = $q.defer();
+
+            if (typeof condition === 'function') {
+                condition.call(this, deferred, args);
+            } else {
+                deferred.resolve({
+                    success: false
+                });
+            }
+            return deferred.promise;
+        };
+    }    
+})();

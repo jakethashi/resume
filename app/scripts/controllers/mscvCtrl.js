@@ -1,35 +1,39 @@
-angular
-    .module('mscv')
-    .controller('MscvCtrl', MscvCtrl);
+(function() {
+    'use strict';
+    
+    angular
+        .module('mscv')
+        .controller('MscvCtrl', MscvCtrl);
 
-function MscvCtrl(skills, dataservice, globals) {
-    var vm = this;
-    vm.skillFilter = skills.skillFilter;
+    function MscvCtrl(skills, dataservice, globals) {
+        var vm = this;
+        vm.skillFilter = skills.skillFilter;
 
-    vm.skillFilterSelect = '';
-    vm.skillItemsLimit = globals.skillItemsLimit;
-    vm.isLogoVisible = false;
+        vm.skillFilterSelect = '';
+        vm.skillItemsLimit = globals.skillItemsLimit;
+        vm.isLogoVisible = false;
 
-    dataservice.getAppContent()
-      .then(contentDataLoad);
+        dataservice.getAppContent()
+          .then(contentDataLoad);
 
-    function contentDataLoad(response) {
-        $.extend(vm, response);
-       
-        vm.isLogoVisible = true;
-        new WOW().init();
-    }
-
-    vm.filterSkills = function($event) {
-        var type = $($event.target).attr('data-type');
-        vm.skillFilterSelect = type;
-    };
-
-    vm.skillsShowMoreLess = function() {
-        if (vm.skillItemsLimit === globals.skillItemsLimit) {
-            vm.skillItemsLimit = 1000;
-        } else {
-            vm.skillItemsLimit = globals.skillItemsLimit;
+        function contentDataLoad(response) {
+            $.extend(vm, response);
+           
+            vm.isLogoVisible = true;
+            new WOW().init();
         }
-    };
-}
+
+        vm.filterSkills = function($event) {
+            var type = $($event.target).attr('data-type');
+            vm.skillFilterSelect = type;
+        };
+
+        vm.skillsShowMoreLess = function() {
+            if (vm.skillItemsLimit === globals.skillItemsLimit) {
+                vm.skillItemsLimit = 1000;
+            } else {
+                vm.skillItemsLimit = globals.skillItemsLimit;
+            }
+        };
+    }
+})();
