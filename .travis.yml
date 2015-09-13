@@ -1,12 +1,18 @@
 sudo: false
 language: node_js
 node_js:
-  - "0.10"
+- "0.10"
 env: BROWSERS=firefox E2E_BROWSERS=Firefox
 
+install:
+- webdriver-manager update --standalone
+
 before_script:
-  - export DISPLAY=:99.0
-  - export CHROME_BIN=chromium-browser
-  - sh -e /etc/init.d/xvfb start  
-  - npm install -g bower
-  - bower install
+- export DISPLAY=:99.0
+- export CHROME_BIN=chromium-browser
+- sh -e /etc/init.d/xvfb start  
+- npm install -g bower
+- bower install
+- sh -e /etc/init.d/xvfb start
+- webdriver-manager start &
+- sleep 2 # give it some time to start
