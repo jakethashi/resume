@@ -11,9 +11,9 @@ describe('Resume App', function() {
 
     // simple smoke tests
     it('should have a title', function() {
-        browser.executeScript('window.scrollTo(0,10000);').then(function() {
-            console.log('done');
-        })
+        //browser.executeScript('window.scrollTo(0,10000);').then(function() {
+        //    console.log('done');
+        //})
         expect(browser.getTitle()).toEqual('Hi, my name is Martin Surynek');
     });
 

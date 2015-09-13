@@ -4,15 +4,14 @@ node_js:
 - "0.10"
 env: BROWSERS=firefox E2E_BROWSERS=Firefox
 
-#install:
-#- webdriver-manager update --standalone
+install:
+- npm install
 
 before_script:
 - export DISPLAY=:99.0
 - export CHROME_BIN=chromium-browser
 - sh -e /etc/init.d/xvfb start  
 - webdriver-manager update
-- npm install
 - npm install -g bower
 - bower install
 - sleep 10 # give it some time to start
