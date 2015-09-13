@@ -1,7 +1,7 @@
 'use strict';
 
 // add extra time to each test step in order to be sure all animation effects are done 
-var utils = require('.././protractor-utils.js');
+var utils = require('.././protractor-utils.js')();
 utils.extend(300);
 
 describe('Resume App', function() {
@@ -10,7 +10,10 @@ describe('Resume App', function() {
     });
 
     // simple smoke tests
-    xit('should have a title', function() {
+    it('should have a title', function() {
+        browser.executeScript('window.scrollTo(0,10000);').then(function() {
+            console.log('done');
+        })
         expect(browser.getTitle()).toEqual('Hi, my name is Martin Surynek');
     });
 
@@ -20,7 +23,7 @@ describe('Resume App', function() {
     });
 
     // scrollspy testing
-    describe('Navbar links one by one', function() {
+    xdescribe('Navbar links one by one', function() {
         it('should navigate to Work eperience section by clicking on particular link', function() {
             element(by.css('ul.navbar-nav a[href="#work-experience"')).click();
 
@@ -70,7 +73,7 @@ describe('Resume App', function() {
         });
     });
 
-    describe('Navbar links', function() {
+    xdescribe('Navbar links', function() {
         it('should navigate throughout the page by clicking on particular link', function() {
             element(by.css('ul.navbar-nav a[href="#certificates"')).click();
             element(by.id('work-experience')).getAttribute('offsetTop').then(function(offset) {
