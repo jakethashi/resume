@@ -4,7 +4,11 @@
 var utils = require('.././protractor-utils.js')();
 utils.extend(300);
 
+console.log(typeof angular);
+
 describe('Resume App', function() {
+    console.log(typeof angular);
+    
     beforeEach(function() {
         browser.get('index.html');
     });
