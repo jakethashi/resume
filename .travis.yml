@@ -4,8 +4,8 @@ node_js:
 - "0.10"
 env: BROWSERS=firefox E2E_BROWSERS=Firefox
 
-install:
-- webdriver-manager update --standalone
+#install:
+#- webdriver-manager update --standalone
 
 before_script:
 - export DISPLAY=:99.0
