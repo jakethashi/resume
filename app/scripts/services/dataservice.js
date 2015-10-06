@@ -5,7 +5,9 @@
 	    .module('mscv')
 	    .service('dataservice', dataservice);
 
-	function dataservice($http, REST_API_URI) {
+	function dataservice($q, $firebaseObject, REST_API_URI) {
+		var ref = new Firebase(REST_API_URI);
+
 		return {
 			getAppContent: getAppContent
 		};
@@ -17,12 +19,12 @@
 			}
 		}
 
-		function getAppContent() {
-			return $http.get(REST_API_URI + 'content.js')
-				.then(function(response) {
-					return response.data;
-				})
-	      		.catch(dataServiceError);
+		function getAppContent($scope) {
+			var syncObject = $firebaseObject(ref);
+			syncObject.$bindTo($scope, 'mscvCtrl.ds');
+
+			syncObject.$loaded().catch(dataServiceError);
+			return syncObject.$loaded();
 		}
 	}
 })();

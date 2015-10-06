@@ -5,7 +5,9 @@
         .module('mscv')
         .controller('MscvCtrl', MscvCtrl);
 
-    function MscvCtrl(skills, dataservice, globals) {
+    function MscvCtrl($scope, skills, dataservice, globals) {
+        console.log('create main controller');
+
         var vm = this;
         vm.skillFilter = skills.skillFilter;
 
@@ -13,10 +15,12 @@
         vm.skillItemsLimit = globals.skillItemsLimit;
         vm.isLogoVisible = false;
 
-        dataservice.getAppContent()
+        dataservice.getAppContent($scope)
           .then(contentDataLoad);
 
         function contentDataLoad(response) {
+            console.log('content data loaded', response);
+
             $.extend(vm, response);
            
             vm.isLogoVisible = true;

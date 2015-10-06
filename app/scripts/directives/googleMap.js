@@ -7,7 +7,7 @@
 
     function googleMap() {
         return function(scope, element, attrs) {
-            var gps = scope.$parent.mscvCtrl.contact.address.tags.address.gps;
+            var gps = scope.$parent.mscvCtrl.ds.content.contact.address.tags.address.gps;
             $(element).lazyLoadGoogleMaps({
                 callback: function( container, map ){
                     var $container = $( container ),

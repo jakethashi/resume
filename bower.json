@@ -20,9 +20,11 @@
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.3.0",
     "react": "~0.13.3",
-    "wow": "~1.1.2"
+    "wow": "~1.1.2",
+    "firebase": "~2.3.1"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.3"
+    "angular-mocks": "~1.4.3",
+    "angularfire": "~1.1.3"
   }
 }

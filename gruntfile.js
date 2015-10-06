@@ -100,7 +100,7 @@ module.exports = function(grunt) {
                     '<%= config.src %>/scripts/filters.js',
                     '<%= config.src %>/scripts/services/*.js'               
                 ],
-                dest: '<%= config.dest %>/files/js/main.min.js'
+                dest: '<%= config.dest %>/files/js/main.dbg.js'
             },
             vendorScripts: {
                 src: [
@@ -108,16 +108,18 @@ module.exports = function(grunt) {
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/jquery-easing/jquery.easing.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/firebase/firebase.js',
                     // angular
                     'bower_components/angular/angular.js',
                     'bower_components/angular-ui-router/release/angular-ui-router.js',
                     'bower_components/angular-resource/angular-resource.js',
                     'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+                    'bower_components/angularfire/dist/angularfire.js',
                     'bower_components/wow/dist/wow.js',
                     'bower_components/underscore/underscore.js',
                     '<%= config.src %>/scripts/vendor/lazy-loading-google-maps/jquery.lazy-load-google-maps.js'                 
                 ],
-                dest: '<%= config.dest %>/files/js/vendor.min.js'
+                dest: '<%= config.dest %>/files/js/vendor.dbg.js'
             },
             css: {
                 src: [
@@ -134,7 +136,7 @@ module.exports = function(grunt) {
         ngAnnotate: {
             angular: {
                 files: {
-                    '<%= config.dest %>/files/js/main.min.js': ['<%= config.dest %>/files/js/main.min.js']
+                    '<%= config.dest %>/files/js/main.dbg.js': ['<%= config.dest %>/files/js/main.dbg.js']
                 },
             }
         },
@@ -170,19 +172,20 @@ module.exports = function(grunt) {
                 ' *\n' +
                 ' * More info about this script and whole site could be provided by personal interview. \n'+
                 ' *\n' +
-                ' */\n\n'
+                ' */\n\n',
+                sourceMap: true
             },
             main: {
                 name: 'main.min.js',
                 files: [{
-                    src: '<%= config.dest %>/files/js/main.min.js',
+                    src: '<%= config.dest %>/files/js/main.dbg.js',
                     dest: '<%= config.dest %>/files/js/main.min.js'
                 }]
             },
             vendor: {
                 name: 'vendor.min.js',
                 files: [{
-                    src: '<%= config.dest %>/files/js/vendor.min.js',
+                    src: '<%= config.dest %>/files/js/vendor.dbg.js',
                     dest: '<%= config.dest %>/files/js/vendor.min.js'
                 }]
             }
@@ -219,7 +222,8 @@ module.exports = function(grunt) {
                     module: true,
                     define: true,
                     require: true,
-                    google: false
+                    google: false,
+                    Firebase: true
                 }
             }
         },
@@ -274,7 +278,7 @@ module.exports = function(grunt) {
     grunt.registerTask('test', [
         'jshint',
         'htmlhint',
-        'karma:unitTest',
+        //'karma:unitTest',
         'protractor'
     ]);
     grunt.registerTask('server', [

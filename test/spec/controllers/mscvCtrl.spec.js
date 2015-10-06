@@ -3,8 +3,7 @@
 describe('Controller: MscvCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('mscv'));
-
+  beforeEach(module('mscv', 'firebase'));
   var MscvCtrl,
       scope;
 
@@ -23,6 +22,7 @@ describe('Controller: MscvCtrl', function () {
     };
 
     MscvCtrl = $controller('MscvCtrl', {
+      $scope: scope,
       skills: skillsMock,
       dataservice: {
         getAppContent: function() {
@@ -31,8 +31,8 @@ describe('Controller: MscvCtrl', function () {
         }
       },
       globals: globalsProviderMock
-      //$scope: scope
     });
+
   }));
 
   it('should have skillFilter list with three items', function () {
